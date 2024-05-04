@@ -25,6 +25,28 @@ echo gettype($Page);  //  this help you to know the kind of datatype you using
 //Integer
 $age = 40;
 
+//float number 
+$floatNuber = 1.3;
+echo gettype($floatNuber); 
+
+//boolean 
+$isLogin =  true;
+echo gettype($isLogin);
+
+//array
+$student = array("john", "Yaw", "John", "Apraku");
+    echo  Var_dump($student);
+
+for($i = 0; $i <10 ; $i++){
+    echo $i;
+};
+
+//php Math
+$min = min(20, 15 , 1 ,  70);
+$max = max(20, 15 , 1 ,  70);
+echo $min;
+echo $max;
+
 
 ?>
 
