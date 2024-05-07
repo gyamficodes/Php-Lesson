@@ -92,6 +92,40 @@ $John->set_name("John");
 echo  $John->get_name();
 
 
+// adding moere property and methods
+class Behaviour {
+    public $Human;
+      public $Color;
+
+      function  set_human($Human) {
+        $this->Human = $Human;
+      }
+
+      function set_color($Color){
+        $this->Color = $Color;
+      }
+
+         function get_human(){
+               return $this->Human;
+         }
+
+         function get_color(){
+            return $this->Color;
+         }
+}
+
+
+$Kwabena = new Behaviour();
+$Kwabena->set_human("Kwabena");
+$Kwabena->set_color("Black");
+
+echo $Kwabena->get_color();
+echo "<br>";
+echo  $Kwabena->get_human();
+
+
+
+
 
 
 
