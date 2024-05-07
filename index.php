@@ -115,15 +115,23 @@ class Behaviour {
 }
 
 
+echo "<br>";
+
 $Kwabena = new Behaviour();
 $Kwabena->set_human("Kwabena");
 $Kwabena->set_color("Black");
 
 echo $Kwabena->get_color();
-echo "<br>";
 echo  $Kwabena->get_human();
 
 
+//instanceof  You can use the instanceof keyword to check if an object belongs to a specific class:
+
+     $Kwabena = new Behaviour();
+     var_dump($Kwabena instanceof Behaviour);
+
+     //consturctor
+     
 
 
 
