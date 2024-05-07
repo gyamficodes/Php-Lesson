@@ -67,6 +67,34 @@ echo var_dump(Mylist);
 $age = 40;
 
 
+
+// Object Oriented programming
+
+
+class student {
+   // data/properties
+    public $name;
+
+    function set_name($name){
+    $this->name = $name;
+    }
+
+    function get_name(){
+     return  $this->name ;
+    }
+
+     
+
+}
+
+$John = new student();
+$John->set_name("John");
+echo  $John->get_name();
+
+
+
+
+
 ?>
 
 <h2>i love <?php  echo"$words"; ?> </h2>
