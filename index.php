@@ -227,7 +227,35 @@ class  penType extends Pen {
 
 $blue = new penType("Big pen", "Blue Pen");
 $blue->message();
+// $blue->intro();
 
+//In the example above we see that all works fine! It is because we call the protected method (intro()) from inside the derived class.
+class Mouse {
+  public $name;
+  public $color;
+
+  public function __construct($name, $color){
+    $this->name = $name;
+    $this->color = $color;
+  }
+
+
+  protected function  anouce(){
+    echo "the name of the mouse is {$this->name} and the color is {$this->color}";
+  }
+
+}
+
+class  MouseType extends Mouse{
+ public function News(){
+    echo "please can I know the mouse name and the color?";
+    $this->anouce();
+  }
+}
+
+
+$wireleesMouse = new MouseType("Wireless Mouse", "Black");
+// $wireleesMouse->News();
 
 
 ?>
@@ -235,3 +263,4 @@ $blue->message();
 <h2>i love <?php  echo"$words"; ?> </h2>
 <h2>i love <?php  echo"$Page"; ?> </h2>
 <h1><?php $blue->intro(); ?></h1>
+<h1><?php $wireleesMouse->News(); ?></h1>
