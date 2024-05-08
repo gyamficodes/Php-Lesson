@@ -201,8 +201,37 @@ echo $Nokia->get_color();
 // $mango->set_color('Yellow'); // ERROR
 // $mango->set_weight('300'); // ERROR
 
+
+
+//Inheritance in OOP = When a class derives from another class.
+class Pen {
+  public $type;
+  public $complex;
+
+ public function __construct($type, $complex){
+        $this->type = $type;
+        $this->complex = $complex;
+     }
+
+     public   function intro(){
+      echo "the name of the pen is {$this->type} and the color is {$this->complex}";
+     }
+}
+
+
+class  penType extends Pen {
+  function message(){
+    echo "please can I know the pen name and the color?";
+  }
+}
+
+$blue = new penType("Big pen", "Blue Pen");
+$blue->message();
+
+
+
 ?>
 
 <h2>i love <?php  echo"$words"; ?> </h2>
 <h2>i love <?php  echo"$Page"; ?> </h2>
-
+<h1><?php $blue->intro(); ?></h1>
