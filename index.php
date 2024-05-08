@@ -131,11 +131,75 @@ echo  $Kwabena->get_human();
      var_dump($Kwabena instanceof Behaviour);
 
      //consturctor
-     
+     /**
+      * A constructor allows you to initialize an object's properties upon creation of the object.
+If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
+Notice that the construct function starts with two underscores (__)!
+      */
+
+      class laptop{
+        public $name;
+
+        public function __construct($name){
+          $this->name = $name;
+        }
+
+        public function get_name($name){
+          $this->name;
+        }
+
+      }
+
+      $laptop = new laptop("Lenovo");
+      echo $laptop->name;
+
+class Phones {
+  public $name;
+  public $Color;
+
+  function  __construct($name, $Color){
+    $this->name = $name;
+    $this->Color = $Color;
+  }
+
+  function get_name(){
+    return $this->name;
+  }
+
+  function get_color(){
+    return $this->Color;
+  }
+
+}
+
+$Nokia = new Phones("Nokia", "Red");
+
+echo $Nokia->get_name();
+echo $Nokia->get_color();
 
 
+// Access Modifies.
 
+//       class table {
+//   public $name;
+//   public $color;
+//   public $weight;
 
+//   function set_name($n) {  // a public function (default)
+//     $this->name = $n;
+//   }
+//   protected function set_color($n) { // a protected function
+//     $this->color = $n;
+//   }
+//   private function set_weight($n) { // a private function
+//     $this->weight = $n;
+//   }
+// }
+
+// $mango = new table();
+// $mango->set_name('Mango'); // OK
+// $mango->set_color('Yellow'); // ERROR
+// $mango->set_weight('300'); // ERROR
 
 ?>
 
