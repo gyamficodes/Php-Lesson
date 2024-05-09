@@ -350,13 +350,56 @@ echo constant::MY_MESSAGE;
 
 class anotherOne{
   const MY_MESSAGE = "Hello this is constant varriable  and can not be change";
+  const MY_COME = "Hello this is constant ";
   public function byBy(){
     echo self::MY_MESSAGE;
+  }
+
+  public function Come(){
+    echo self::MY_COME;
   }
 }
 
 $byBy = new anotherOne();
+$Come = new anotherOne();
 $byBy->byBy();
+$Come->Come();
+
+
+
+/**PHP - What are Abstract Classes and Methods?
+Abstract classes and methods are when the parent class has a named method, but need its child class(es) to fill out the tasks.
+An abstract class is a class that contains at least one abstract method. An abstract method is a method that is declared, but not implemented in the code.
+An abstract class or method is defined with the abstract keyword: */
+
+//Parent class ;
+
+abstract class Car {
+  public $name;
+
+  public function __construct($name){
+    $this->name = $name;
+
+  }
+
+  abstract public function SMM() : string;
+ 
+  }
+
+//Child class
+
+class Toyota extends Car {
+  public function SMM() : string {
+  return "the car name is  $this->name";
+  }
+}
+
+$toyota = new toyota("Toyota");
+// $toyota->SMM();
+
+
+
+
 
 
 
@@ -375,5 +418,5 @@ $byBy->byBy();
 <h1><?php $blue->intro(); ?></h1>
 <h1><?php $wireleesMouse->News(); ?></h1>
 <h1><?php $BigIron->inTroInon();  ?></h1>
-
 <h1><?php $byBy->byBy();  ?></h1>
+<h2><?php echo $toyota->SMM(); ?></h2>
