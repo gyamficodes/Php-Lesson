@@ -229,6 +229,10 @@ $blue = new penType("Big pen", "Blue Pen");
 $blue->message();
 // $blue->intro();
 
+
+
+
+
 //In the example beloew we see that all works fine! It is because we call the protected method (intro()) from inside the derived class.
 class Mouse {
   public $name;
@@ -298,9 +302,33 @@ $BigIron = new Iron("BigIron", "red", 70);
 // $BigIron->inTroInon();
 
 
+class KeyBoard {
+  public $name;
+  public $color;
+
+  public function __construct($name, $color){
+    $this->name = $name;
+    $this->color = $color;
+  }
+
+
+  protected function keyType(){
+    return "the name of the keyBoard is {$this->name} and the color is {$this->color}";
+  }
+
+}
+
+class Wirelless extends KeyBoard {
+    public function Tell(){
+      echo $this->keyType();
+    }
+}
+
+$Dell = new Wirelless("Dell Keyboard", "Black");
+$Dell->Tell();
+
+
 //The final keyword can be used to prevent class inheritance or to prevent method overriding.
-
-
 // final class Fruit {
 //   // some code
 // }
@@ -312,6 +340,32 @@ $BigIron = new Iron("BigIron", "red", 70);
 
 
 
+//PHP OOP - Class Constants
+class constant {
+  const MY_MESSAGE = "Hello this is constant varriable  and can not be change";
+}
+echo constant::MY_MESSAGE;
+
+
+
+class anotherOne{
+  const MY_MESSAGE = "Hello this is constant varriable  and can not be change";
+  public function byBy(){
+    echo self::MY_MESSAGE;
+  }
+}
+
+$byBy = new anotherOne();
+$byBy->byBy();
+
+
+
+
+
+
+
+
+
 
 
 ?>
@@ -320,4 +374,6 @@ $BigIron = new Iron("BigIron", "red", 70);
 <h2>i love <?php  echo"$Page"; ?> </h2>
 <h1><?php $blue->intro(); ?></h1>
 <h1><?php $wireleesMouse->News(); ?></h1>
-<h1><?php $BigIron->inTroInon()  ?></h1>
+<h1><?php $BigIron->inTroInon();  ?></h1>
+
+<h1><?php $byBy->byBy();  ?></h1>
