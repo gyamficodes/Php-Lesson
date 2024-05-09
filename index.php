@@ -297,6 +297,23 @@ class Iron extends Machine {
 $BigIron = new Iron("BigIron", "red", 70);
 // $BigIron->inTroInon();
 
+
+//The final keyword can be used to prevent class inheritance or to prevent method overriding.
+
+
+// final class Fruit {
+//   // some code
+// }
+
+// // will result in error
+// class Strawberry extends Fruit {
+//   // some code
+// }
+
+
+
+
+
 ?>
 
 <h2>i love <?php  echo"$words"; ?> </h2>
