@@ -229,7 +229,7 @@ $blue = new penType("Big pen", "Blue Pen");
 $blue->message();
 // $blue->intro();
 
-//In the example above we see that all works fine! It is because we call the protected method (intro()) from inside the derived class.
+//In the example beloew we see that all works fine! It is because we call the protected method (intro()) from inside the derived class.
 class Mouse {
   public $name;
   public $color;
@@ -258,9 +258,49 @@ $wireleesMouse = new MouseType("Wireless Mouse", "Black");
 // $wireleesMouse->News();
 
 
+
+/**
+ *PHP - Overriding Inherited Methods
+Inherited methods can be overridden by redefining the methods (use the same name) in the child class.
+Look at the example below. The __construct() and intro() methods in the child class (Strawberry) will override the __construct() and intro() methods in the parent class (Fruit): 
+ */
+
+class  Machine {
+   public  $name;
+   public $color;
+
+
+   public function __construct($name, $color){
+     $this->name = $name;
+     $this->color = $color;
+   }
+
+     public function introMachine(){
+       echo "the name of the machine is {$this->name} and the color is {$this->color}";
+     }
+}
+
+
+class Iron extends Machine {
+  public $weight;
+
+  public function __construct($name, $color, $weight){
+    $this->name = $name;
+    $this->color = $color;
+    $this->weight = $weight;
+  }
+
+  public function inTroInon(){
+    echo "the name of the machine is {$this->name} and the color is {$this->color} and the weight is {$this->weight}";
+  }
+}
+$BigIron = new Iron("BigIron", "red", 70);
+// $BigIron->inTroInon();
+
 ?>
 
 <h2>i love <?php  echo"$words"; ?> </h2>
 <h2>i love <?php  echo"$Page"; ?> </h2>
 <h1><?php $blue->intro(); ?></h1>
 <h1><?php $wireleesMouse->News(); ?></h1>
+<h1><?php $BigIron->inTroInon()  ?></h1>
