@@ -395,7 +395,9 @@ class Toyota extends Car {
 }
 
 $toyota = new toyota("Toyota");
-// $toyota->SMM();
+// echo $toyota->SMM();
+
+
 
 
 
