@@ -422,6 +422,10 @@ Interfaces are declared with the interface keyword: */
 
 
 
+
+
+
+
 ?>
 
 <h2>i love <?php  echo"$words"; ?> </h2>
