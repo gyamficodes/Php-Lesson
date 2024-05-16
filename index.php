@@ -92,6 +92,36 @@ $John->set_name("John");
 echo  $John->get_name();
 
 
+
+class Book {
+  public $subject;
+  public $course;
+
+    function set_subject($subject){
+     $this->subject = $subject;
+   }
+
+   function set_course($course){
+    $this->course = $course;
+   }
+
+      function get_subject(){
+      return $this->subject;
+     }
+
+       function get_course(){
+      return  $this->course;
+      }
+
+}
+
+$science = new Book();
+$science->set_course("Science Student");
+$science->set_subject("Biology");
+echo $science->get_subject();
+echo $science->get_course();
+
+
 // adding moere property and methods
 class Behaviour {
     public $Human;
@@ -136,6 +166,22 @@ echo  $Kwabena->get_human();
 If you create a __construct() function, PHP will automatically call this function when you create an object from a class.
 Notice that the construct function starts with two underscores (__)!
       */
+
+      class Water {
+        public $name;
+      
+        public function __construct($name){
+          $this->name = $name;
+        }
+         public function get_Name(){
+          return $this->name;
+         }
+      
+      }
+      
+      $Verna = new Water("Verna");
+      echo $Verna->get_Name();
+
 
       class laptop{
         public $name;
@@ -406,6 +452,7 @@ Interfaces make it easy to use a variety of different classes in the same way. W
 Interfaces are declared with the interface keyword: */
 
 
+  
 
 
 
