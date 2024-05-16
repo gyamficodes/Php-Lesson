@@ -494,6 +494,42 @@ $Sarkor = new Sarkodie();
 $Sarkor->Raping();
 
 
+interface Zoo {
+  public function behaviour();
+}
+
+Class Goat implements Zoo{
+  public function behaviour(){
+    echo "Goats are very smart and wise";
+  }
+}
+
+class Lion implements Zoo {
+  public function behaviour(){
+    echo "Lions are wired animals and they eat fresh only";
+  }
+}
+
+
+
+$MaleGoat = New Goat();
+$lion = new Lion();
+// $lion->behaviour();
+// $MaleGoat->behaviour();
+$zoos = array($MaleGoat,$lion);
+
+foreach($zoos as $Zoo){
+  echo $Zoo->behaviour();
+}
+
+
+
+
+
+
+
+
+
 
 
 
