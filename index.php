@@ -547,9 +547,30 @@ class TapHotel{
 $tabhotels = new TapHotel();
 $tabhotels->someNews();
 
+//HP - Using Multiple Traits
+//Let's look at another example:
+
+trait Adom{
+  public function AdomNews(){
+    echo "this is some news about Adom";
+  }
+}
+trait Joyprime{
+  public function JoyprimeNews(){
+    echo "this is some news about JoyPrime";
+  }
+}
 
 
+class Media{
+  use Adom;
+  use Joyprime;
+}
 
+
+$media = new Media();
+$media->AdomNews();
+$media->JoyprimeNews();
 
 
 
