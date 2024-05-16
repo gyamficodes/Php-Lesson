@@ -250,6 +250,34 @@ echo $Nokia->get_color();
 
 
 //Inheritance in OOP = When a class derives from another class.
+class Colors {
+  public $name;
+  public $numb;
+
+public  function  __construct($name, $numb){
+    $this->name = $name;
+    $this->numb = $numb;
+}
+
+public function ShowPen(){
+  echo "the name of the color is {$this->name} and the  number is {$this->numb}";
+}
+
+}
+
+
+class Red extends Colors{
+  public  function  myMesssage(){
+    // echo "what is the name of the color";
+    $this->ShowPen(0);
+  }
+}
+
+$ColorRed = new Red("Red", "20");
+$ColorRed->ShowPen();
+
+
+
 class Pen {
   public $type;
   public $complex;
@@ -451,8 +479,23 @@ Interfaces allow you to specify what methods a class should implement.
 Interfaces make it easy to use a variety of different classes in the same way. When one or more classes use the same interface, it is referred to as "polymorphism".
 Interfaces are declared with the interface keyword: */
 
+interface Rap {
+  public function Raping();
+}
 
-  
+
+class Sarkodie implements Rap{
+  public function Raping(){
+      echo "Sarkodie is a rapper in Ghana";
+  }
+}
+
+$Sarkor = new Sarkodie();
+$Sarkor->Raping();
+
+
+
+
 
 
 
