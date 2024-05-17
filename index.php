@@ -527,7 +527,6 @@ foreach($zoos as $Zoo){
 
 
 
-
 /**
  * PHP - What are Traits?
 PHP only supports single inheritance: a child class can inherit only from one single parent.
@@ -628,10 +627,25 @@ public function ShowPrayer(){
 $pray->ShowPrayer();
 
 
+/**
+ * A class can have both static and non-static properties. A static property can be accessed from a method in the same class using the self keyword and double colon (::):
+ */
 
 
+ class P2 {
+  public static $Boxes = "Microtik Boxes";
+
+  public function MyBoxes(){
+    echo self::$Boxes;
+  }
+ }
 
 
+ $p2 = new P2();
+ $p2->MyBoxes();
+
+
+ 
 
 
 
