@@ -519,8 +519,10 @@ $lion = new Lion();
 $zoos = array($MaleGoat,$lion);
 
 foreach($zoos as $Zoo){
+
   echo $Zoo->behaviour();
 }
+
 
 
 
@@ -619,10 +621,13 @@ public function ShowPrayer(){
  echo self::$thanks;
 }
 
+
  }
 
  $pray = new  Pray();
 $pray->ShowPrayer();
+
+
 
 
 
