@@ -574,7 +574,21 @@ $media->JoyprimeNews();
 
 
 
+/**
+ * PHP - Static Methods
+Static methods can be called directly - without creating an instance of the class first.
+Static methods are declared with the static keyword:
+ */
 
+
+
+ class Players {
+  public static function HelloWord(){
+    echo "Vini Jrn and Jude for balon dior";
+  }
+ }
+
+ Players::HelloWord();
 
 
 
