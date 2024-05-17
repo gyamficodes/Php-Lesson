@@ -591,6 +591,39 @@ Static methods are declared with the static keyword:
  Players::HelloWord();
 
 
+ class greeting {
+  public static function greet(){
+    echo "Good morning!";
+  }
+ }
+
+ greeting::greet();
+
+
+
+/**
+ * PHP - Static Properties
+Static properties can be called directly - without creating an instance of a class.
+Static properties are declared with the static keyword:
+ */
+
+
+class ClassName {
+  public static $Box = "Microtik";
+}
+ echo ClassName::$Box;
+
+ class Pray{
+  public static $thanks = "Thank God For life";
+public function ShowPrayer(){
+ echo self::$thanks;
+}
+
+ }
+
+ $pray = new  Pray();
+$pray->ShowPrayer();
+
 
 
 
