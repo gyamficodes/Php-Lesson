@@ -64,7 +64,35 @@ echo var_dump(Mylist);
 
 
 //if eslw
-$age = 40;
+$Childage  = 10;
+$Adultage = 40;
+
+
+$child = "Baby sister";
+$adult = "Big sister";
+
+if($Adultage >= 20){
+  echo $adult;  
+}
+
+if($Childage == 10){
+  echo $child;  
+}
+
+//switch statement
+$Grade = "A";
+
+switch($Grade){
+  case $Grade == "A":
+    echo "Execellent";
+    break;
+    
+  }
+
+
+
+
+
 
 
 
