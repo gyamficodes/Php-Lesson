@@ -80,14 +80,59 @@ if($Childage == 10){
 }
 
 //switch statement
-$Grade = "A";
+$Grade = "";
 
 switch($Grade){
-  case $Grade == "A":
+  case "A":
     echo "Execellent";
     break;
-    
+  case "B":
+    echo "Good";
+    break;
+    case "C":
+      echo "Fair";
+      break;
+      case "D":
+        echo "Pass";
+        break;
+        case "E":
+          echo "Fail";
+          break;
+          default:
+          echo "You did not take part of the exam";
   }
+
+  //Loops = this use to execute the same block of code again and again, as a certain condition is true;
+  
+  //for loop
+  for($i = 0; $i < 10; $i++){
+    echo $i;
+  }
+   
+
+  $Food = array("Banku", "Rice", "Waakye", "Jollof");
+
+  for($item = 0; $item < count($Food); $item++) {
+      echo $Food[$item] . "<br>"; // Add a HTML line break for better readability on the web
+  }
+ 
+  //While loop == it execute when a certain condition is true;
+  $i = 0;
+  while($i < 10){
+    echo $i;
+    $i++;
+  }
+
+  $e = 0;
+  $FoodStaff = array("Banku", "Rice", "Waakye", "Jollof");
+  while($e < count($FoodStaff)){
+    echo $FoodStaff[$e];
+    $e++;
+  }
+
+  
+
+
 
 
 
