@@ -130,11 +130,40 @@ switch($Grade){
     $e++;
   }
 
-  
+  // do wihle loop
 
 
+$t = 0;
+
+do{
+  echo $t;
+  $t++;
+}while($t < 10);
 
 
+$Foods = array("Banku", "Rice", "Waakye", "Jollof");
+
+do{
+  echo $Foods[$ele];
+$ele++;
+}while($ele < count($Foods));
+
+// The foreach loop - Loops through a block of code for each element in an array or each property in an object.
+
+// The foreach Loop on Arrays
+// The most common use of the foreach loop, is to loop through the items of an array.
+
+$colors = array("red", "green", "blue", "yellow");
+
+foreach ($colors as $x) {
+  echo "$x <br>";
+}
+
+$members = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach($members as $x => $y){
+  echo $x. " is ". $y. " years old. <br>";
+}
 
 
 
