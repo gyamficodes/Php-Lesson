@@ -166,7 +166,42 @@ foreach($members as $x => $y){
 }
 
 
+//PHP Functions
+//The real power of PHP comes from its functions.
+//PHP has more than 1000 built-in functions, and in addition you can create your own custom functions.
 
+function myMesssages(){
+  echo "Helle this is my first function in Php";
+}
+
+myMesssages();
+
+//PHP Function Arguments
+//Information can be passed to functions through arguments. An argument is just like a variable.
+//Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
+
+function addNum($a, $b){
+  echo $a + $b;
+}
+addNum(10, 20);
+
+function handdleaName($name){
+  echo $name;
+}
+
+handdleaName("John");
+
+/**
+ * PHP Default Argument Value
+The following example shows how to use a default parameter. If we call the function setHeight() without arguments it takes the default value as argument:
+ */
+
+function setHeight($minheight = 50) {
+  echo "The height is : $minheight <br>";
+}
+
+setHeight(350);
+setHeight(); // THis will use the default agument 50.
 
 
 
