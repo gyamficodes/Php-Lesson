@@ -204,6 +204,27 @@ setHeight(350);
 setHeight(); // THis will use the default agument 50.
 
 
+// PHP Functions - Returning values
+// To let a function return a value, use the return statement:
+
+function handdleFullName($FirstName, $SecondName){
+  $FullName = $FirstName . $SecondName;
+  return $FullName;
+}
+
+echo handdleFullName("Gyamfi", "John");
+
+// Passing Arguments by Reference
+// In PHP, arguments are usually passed by value, which means that a copy of the value is used in the function and the variable that was passed into the function cannot be changed.z
+// When a function argument is passed by reference, changes to the argument also change the variable that was passed in. To turn a function argument into a reference, the & operator is used:
+
+function myAge(&$age){
+   $age += 22;
+}
+$thisyear = 1;
+myAge($thisyear);
+
+
 
 // Object Oriented programming
 
