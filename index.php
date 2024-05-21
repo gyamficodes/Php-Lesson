@@ -54,6 +54,60 @@ echo $sqt;
 $student = array("name" => array('John',"kofi"), "age" => 20, "gender" => "male");
 echo Var_dump($student);
 
+$cars = array("BMW", "Taxi", "LEXUS");
+echo var_dump($cars);
+
+
+//Access Indexed Arrays
+//To access an array item you can refer to the index number.
+echo  $cars[0];
+
+//change the value
+echo $cars[1] = "Food";
+
+//Loop Through an Indexed Array
+//To loop through and print all the values of an indexed array, you could use a foreach loop, like this:
+  $card = array("Volvo", "BMW", "Toyota");
+foreach ($card as $x) {
+  echo "$x <br>";
+}
+
+
+//Access Associative Arrays
+//To access an array item you can refer to the key name.
+
+$workers= array("name" => array('John',"kofi"), "age" => 20, "gender" => "male");
+echo Var_dump($student);
+
+echo $workers["name"][0];
+echo $workers["age"];
+
+
+$course = array("arts" => "Econs", "science" => "Biology" , "visual" => "texals");
+echo var_dump($course);
+
+echo $course["arts"];
+
+
+//Add Multiple Array Items
+//To add multiple items to an existing array, use the array_push() function.
+$fruits = array('apple', "pineapple", 'pawpaw');
+array_push($fruits, "Coconut");
+
+
+
+/**
+ * Remove Array Item
+To remove an existing item from an array, you can use the array_splice() function.
+With the array_splice() function you specify the index (where to start) and how many items you want to delete.
+ */
+$fruitsB = array('apple', "pineapple", 'pawpaw');
+
+
+
+
+
+
 
 //constant varriable
 // define("name", "Gyamfi John");
@@ -223,6 +277,31 @@ function myAge(&$age){
 }
 $thisyear = 1;
 myAge($thisyear);
+
+
+/**
+ * PHP is a Loosely Typed Language
+In the examples above, notice that we did not have to tell PHP which data type the variable is.
+PHP automatically associates a data type to the variable, depending on its value. Since the data types are not set in a strict sense, you can do things like adding a string to an integer without causing an error.
+In PHP 7, type declarations were added. This gives us an option to specify the expected data type when declaring a function, and by adding the strict declaration, it will throw a "Fatal Error" if the data type mismatches.
+In the following example we try to send both a number and a string to the function without using strict:
+Example
+ */
+// function addNumbers(int $a, int $b) {
+//   return $a + $b;
+// }
+// echo addNumbers(5, "5 days");
+// since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
+
+//You can specify a different return type, than the argument types, but make sure the return is the correct type:
+
+  /**
+   * <?php declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b) : int {
+  return (int)($a + $b);
+}
+echo addNumbers(1.2, 5.2);
+   */
 
 
 
