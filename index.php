@@ -101,8 +101,8 @@ array_push($fruits, "Coconut");
 To remove an existing item from an array, you can use the array_splice() function.
 With the array_splice() function you specify the index (where to start) and how many items you want to delete.
  */
-$fruitsB = array('apple', "pineapple", 'pawpaw');
-array_slice($fruits, 'apple');
+// $fruitsB = array('apple', "pineapple", 'pawpaw');
+// array_slice($fruits, 'apple');
 
 
 
@@ -940,7 +940,15 @@ class MyIterator implements Iterator {
 
 
 
+//PHP Global Variables - Superglobals
 
+//Some predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
+$x = 75;
+  
+function myfunction() {
+  echo $GLOBALS['x'];
+}
+myfunction()
 
 
 
