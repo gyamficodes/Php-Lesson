@@ -102,6 +102,7 @@ To remove an existing item from an array, you can use the array_splice() functio
 With the array_splice() function you specify the index (where to start) and how many items you want to delete.
  */
 $fruitsB = array('apple', "pineapple", 'pawpaw');
+array_slice($fruits, 'apple');
 
 
 
@@ -185,6 +186,7 @@ switch($Grade){
   }
 
   // do wihle loop
+
 
 
 $t = 0;
