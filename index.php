@@ -326,6 +326,10 @@ echo addNumbers(1.2, 5.2);
    */
 
 
+   //php date and time date($format, $timestamp);
+   //format = required for . specifies  the timestamp/ Default it the curre
+
+
 
 
 
@@ -962,6 +966,7 @@ class MyIterator implements Iterator {
 
 
 //PHP Global Variables - Superglobals
+<<<<<<< HEAD
 
 //Some predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
 $x = 75;
@@ -970,8 +975,16 @@ function myfunction() {
   echo $GLOBALS['x'];
 }
 myfunction();
+=======
+>>>>>>> ca3143589b77130741c00ea9dd587822259fa7cb
 
-
+//Some predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
+$x = 75;
+  
+function myfunction() {
+  echo $GLOBALS['x'];
+}
+myfunction();
 
 //php date and time date($format, $timestamp);
 //format = required for . specifies  the timestamp/ Default it the curre
