@@ -232,6 +232,8 @@ function myMesssages(){
 
 myMesssages();
 
+
+
 //PHP Function Arguments
 //Information can be passed to functions through arguments. An argument is just like a variable.
 //Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
@@ -246,6 +248,24 @@ function handdleaName($name){
 }
 
 handdleaName("John");
+
+function setName($c, $d){
+   echo $c . " ". $d;
+}
+
+define("c", "Gyamfi");
+define("d", "Gyamfi");
+
+setName(c,d);
+
+
+// php default value 
+function addprice($rice = 10, $banku = 20){
+  return $rice + $banku;
+}
+
+echo 20 + addprice(10,4);
+
 
 /**
  * PHP Default Argument Value
@@ -304,6 +324,10 @@ function addNumbers(float $a, float $b) : int {
 }
 echo addNumbers(1.2, 5.2);
    */
+
+
+   //php date and time date($format, $timestamp);
+   //format = required for . specifies  the timestamp/ Default it the curre
 
 
 
@@ -948,8 +972,7 @@ $x = 75;
 function myfunction() {
   echo $GLOBALS['x'];
 }
-myfunction()
-
+myfunction();
 
 
 
@@ -962,3 +985,26 @@ myfunction()
 <h1><?php $BigIron->inTroInon();  ?></h1>
 <h1><?php $byBy->byBy();  ?></h1>
 <h2><?php echo $toyota->SMM(); ?></h2>
+
+
+<html>
+<body>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="fname">
+  <input type="submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = htmlspecialchars($_REQUEST['fname']);
+  if (empty($name)) {
+    echo "Name is empty";
+  } else {
+    echo $name;
+  }
+}
+?>
+
+</body>
+</html>
