@@ -101,8 +101,8 @@ array_push($fruits, "Coconut");
 To remove an existing item from an array, you can use the array_splice() function.
 With the array_splice() function you specify the index (where to start) and how many items you want to delete.
  */
-$fruitsB = array('apple', "pineapple", 'pawpaw');
-array_slice($fruits, 'apple');
+// $fruitsB = array('apple', "pineapple", 'pawpaw');
+// array_slice($fruits, 'apple');
 
 
 
@@ -232,6 +232,8 @@ function myMesssages(){
 
 myMesssages();
 
+
+
 //PHP Function Arguments
 //Information can be passed to functions through arguments. An argument is just like a variable.
 //Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.
@@ -246,6 +248,24 @@ function handdleaName($name){
 }
 
 handdleaName("John");
+
+function setName($c, $d){
+   echo $c . " ". $d;
+}
+
+define("c", "Gyamfi");
+define("d", "Gyamfi");
+
+setName(c,d);
+
+
+// php default value 
+function addprice($rice = 10, $banku = 20){
+  return $rice + $banku;
+}
+
+echo 20 + addprice(10,4);
+
 
 /**
  * PHP Default Argument Value
@@ -304,6 +324,7 @@ function addNumbers(float $a, float $b) : int {
 }
 echo addNumbers(1.2, 5.2);
    */
+
 
 
 
@@ -940,10 +961,29 @@ class MyIterator implements Iterator {
 
 
 
+//PHP Global Variables - Superglobals
+
+//Some predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
+$x = 75;
+  
+function myfunction() {
+  echo $GLOBALS['x'];
+}
+myfunction();
 
 
 
+//php date and time date($format, $timestamp);
+//format = required for . specifies  the timestamp/ Default it the curre
 
+echo "todays date is".date("l d-m-y");
+// echo date("m");
+// echo date("y");
+// echo date("l");
+
+//time 
+// date_default_timezone_get("Africa/Ghana");
+// echo date("h:i:s: a");
 
 ?>
 
@@ -954,3 +994,26 @@ class MyIterator implements Iterator {
 <h1><?php $BigIron->inTroInon();  ?></h1>
 <h1><?php $byBy->byBy();  ?></h1>
 <h2><?php echo $toyota->SMM(); ?></h2>
+
+
+<html>
+<body>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="fname">
+  <input type="submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = htmlspecialchars($_REQUEST['fname']);
+  if (empty($name)) {
+    echo "Name is empty";
+  } else {
+    echo $name;
+  }
+}
+?>
+
+</body>
+</html>
