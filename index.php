@@ -979,12 +979,12 @@ myfunction();
 
 
 //Some predefined variables in PHP are "superglobals", which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
-// $x = 75;
+$x = 75;
   
-// function myfunction() {
-//   echo $GLOBALS['x'];
-// }
-// myfunction();
+function myfunct() {
+  echo $GLOBALS['x'];
+}
+myfunct();
 
 //php date and time date($format, $timestamp);
 //format = required for . specifies  the timestamp/ Default it the curre
@@ -994,9 +994,36 @@ echo "todays date is".date("l d-m-y");
 // echo date("y");
 // echo date("l");
 
-//time 
-// date_default_timezone_get("Africa/Ghana");
-// echo date("h:i:s: a");
+/**
+ * PHP Tip - Automatic Copyright Year
+Use the date() function to automatically update the copyright year on your website:
+ */
+// &copy; 2010-<?php echo date("Y");
+
+// Get a Time
+echo "The time is " . date("h:i:sa");
+
+date_default_timezone_set("Africa/Kumasi");
+echo "The time is " . date("h:i:sa");
+
+/**
+ * Create a Date With mktime()
+The optional timestamp parameter in the date() function specifies a timestamp. If omitted, the current date and time will be used (as in the examples above).
+
+The PHP mktime() function returns the Unix timestamp for a date. The Unix timestamp contains the number of seconds between the Unix Epoch (January 1 1970 00:00:00 GMT) and the time specified.
+
+Syntax
+mktime(hour, minute, second, month, day, year)
+ */
+
+
+
+ $d=mktime(11, 14, 54, 8, 12, 2014);
+ echo "Created date is " . date("Y-m-d h:i:sa", $d);
+
+
+ //php file handling
+
 
 ?>
 
@@ -1009,24 +1036,3 @@ echo "todays date is".date("l d-m-y");
 <h2><?php echo $toyota->SMM(); ?></h2>
 
 
-<html>
-<body>
-
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-  Name: <input type="text" name="fname">
-  <input type="submit">
-</form>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = htmlspecialchars($_REQUEST['fname']);
-  if (empty($name)) {
-    echo "Name is empty";
-  } else {
-    echo $name;
-  }
-}
-?>
-
-</body>
-</html>
