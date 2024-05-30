@@ -1,4 +1,5 @@
 <?php 
+$myText = readfile('./readme.txt');
 
 $name = "JOHN is going to school h";
 echo "$name";
