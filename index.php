@@ -17,7 +17,15 @@ if(unlink($filename)){
     echo "file has not delete";
 }
 
+//php file content
+$content =  "<h1>This is php content you need to  know </h1>";
 
+if(file_put_contents('./about.html', $content, )){
+  echo 'file written';
+}
+//php file get file content
+$file = file_get_contents('./about.html');
+echo   $file;
 
 
 $name = "JOHN is going to school h";
