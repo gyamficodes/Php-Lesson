@@ -1,5 +1,24 @@
-<?php 
+<?php
+//file handling
 $myText = readfile('./readme.txt');
+echo $myText;
+
+//The first parameter of fopen() contains the name of the file to be opened and the second parameter specifies in which mode the file should be opened
+// $myfile = fopen("webdictionary.txt", "r") ;
+// echo fread($myfile,filesize("webdictionary.txt"));
+// fclose($myfile);
+
+//file delete
+$filename = "upload/hotel2.jpg";
+
+if(unlink($filename)){
+    echo ("file delete");
+}else{
+    echo "file has not delete";
+}
+
+
+
 
 $name = "JOHN is going to school h";
 echo "$name";
@@ -1028,6 +1047,14 @@ mktime(hour, minute, second, month, day, year)
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 <h2>i love <?php  echo"$words"; ?> </h2>
 <h2>i love <?php  echo"$Page"; ?> </h2>
 <h1><?php $blue->intro(); ?></h1>
@@ -1035,5 +1062,18 @@ mktime(hour, minute, second, month, day, year)
 <h1><?php $BigIron->inTroInon();  ?></h1>
 <h1><?php $byBy->byBy();  ?></h1>
 <h2><?php echo $toyota->SMM(); ?></h2>
+
+
+<!-- 
+<form action="upload.php"   method="post"  enctype="multipart/form-data">
+  <input type="file" name="$filename" >
+  <input type="submit" value="Upload Image" name="submit">
+</form> -->
+
+
+</body>
+</html>
+
+
 
 
