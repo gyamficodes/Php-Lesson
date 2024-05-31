@@ -1050,7 +1050,11 @@ mktime(hour, minute, second, month, day, year)
  echo "Created date is " . date("Y-m-d h:i:sa", $d);
 
 
- //php file handling
+ //php file sesseion 
+//  A session is a way to store information (in variables) to be used across multiple pages.
+// Unlike a cookie, the information is not stored on the users computer.
+
+
   
 
 ?>
