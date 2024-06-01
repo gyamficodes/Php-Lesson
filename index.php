@@ -5,6 +5,8 @@ $code = "Gyamfi John is  learning  PHP LESSON";
 $_SESSION["User_Name"] = $code;
 
 
+//php file upload
+
 
 
 //file handling
@@ -1063,7 +1065,19 @@ mktime(hour, minute, second, month, day, year)
 // Unlike a cookie, the information is not stored on the users computer.
 
 
+interface  languages{
+   public  function learnLang();
+}
+
+
+class  html implements languages{
+       function  learnLang(){
+           echo "I am learning html oo";
+       }
+}
   
+$HT = new html();
+$HT->learnLang();
 
 ?>
 
@@ -1075,7 +1089,7 @@ mktime(hour, minute, second, month, day, year)
   <title>Document</title>
 </head>
 <body>
-<h2>i love <?php  echo"$words"; ?> </h2>
+<h2>i love <?php  echo"$words";?> </h2>
 <h2>i love <?php  echo"$Page"; ?> </h2>
 <h1><?php $blue->intro(); ?></h1>
 <h1><?php $wireleesMouse->News(); ?></h1>
@@ -1084,11 +1098,11 @@ mktime(hour, minute, second, month, day, year)
 <h2><?php echo $toyota->SMM(); ?></h2>
 
 
-<!-- 
-<form action="upload.php"   method="post"  enctype="multipart/form-data">
-  <input type="file" name="$filename" >
-  <input type="submit" value="Upload Image" name="submit">
-</form> -->
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<h1> Select file to upload</h1>
+<input type="file" name="fileimage" >
+<input type="submit" value="upload the file">
+</form>
 
 
 </body>
