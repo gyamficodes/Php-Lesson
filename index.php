@@ -1,4 +1,12 @@
 <?php
+Session_Start();
+
+$code = "Gyamfi John is  learning  PHP LESSON";
+$_SESSION["User_Name"] = $code;
+
+
+
+
 //file handling
 $myText = readfile('./readme.txt');
 echo $myText;
