@@ -6,4 +6,6 @@ if(move_uploaded_file($_FILES["fileimage"] ["tmp_name"], $file)){
 }else{
     echo "image not uploaded";
 };
+
+
 ?>
