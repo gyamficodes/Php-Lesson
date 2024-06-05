@@ -1079,6 +1079,9 @@ class  html implements languages{
 $HT = new html();
 $HT->learnLang();
 
+//php form submision
+//checking for forms
+
 ?>
 
 <!DOCTYPE html>
@@ -1097,13 +1100,21 @@ $HT->learnLang();
 <h1><?php $byBy->byBy();  ?></h1>
 <h2><?php echo $toyota->SMM(); ?></h2>
 
-
+<!-- form  upload image -->
 <form action="upload.php" method="post" enctype="multipart/form-data">
 <h1> Select file to upload</h1>
 <input type="file" name="fileimage" >
 <input type="submit" value="upload the file">
 </form>
 
+
+<!-- form submit -->
+
+<form action="" method="GET">
+  <label for="name">Name:</label>
+  <input type="text" name="name" placeholder="name">
+  <button type="submit" >Submit</button>
+</form>
 
 </body>
 </html>
