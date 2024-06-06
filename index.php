@@ -1079,8 +1079,21 @@ class  html implements languages{
 $HT = new html();
 $HT->learnLang();
 
+
+
 //php form submision
 //checking for forms
+
+if(isset($_POST["login"])){
+  echo var_dump($_POST, "You Have Login Succesfully");
+}
+
+if(isset($_POST["register"])){
+  echo var_dump($_POST, "You Have Register Succesfully");
+}
+
+
+// how to use form data in php  and extracting infformation from form datta
 
 ?>
 
@@ -1108,13 +1121,25 @@ $HT->learnLang();
 </form>
 
 
+<!-- form handdling -->
 <!-- form submit -->
-
-<form action="" method="GET">
+<!-- login -->
+<form action="" method="POST">
   <label for="name">Name:</label>
   <input type="text" name="name" placeholder="name">
-  <button type="submit" >Submit</button>
+  <button type="submit" name="login">Submit</button>
 </form>
+
+<br>
+<!-- Register -->
+<form action="" method="POST">
+  <label for="name">Register:</label>
+  <input type="text" name="first_name" placeholder="name">
+  <button type="submit" name="register">Submit</button>
+</form>
+
+
+<!-- how to use form data in php  and extracting infformation from form datta  -->
 
 </body>
 </html>
