@@ -1124,23 +1124,34 @@ if(isset($_POST["register"])){
 <!-- form handdling -->
 <!-- form submit -->
 <!-- login -->
-<form action="" method="POST">
+<!-- <form action="" method="POST">
   <label for="name">Name:</label>
   <input type="text" name="name" placeholder="name">
   <button type="submit" name="login">Submit</button>
-</form>
+</form> -->
 
 <br>
 <!-- Register -->
-<form action="" method="POST">
+<!-- <form action="" method="POST">
   <label for="name">Register:</label>
   <input type="text" name="first_name" placeholder="name">
   <button type="submit" name="register">Submit</button>
-</form>
+</form> -->
 
 
 <!-- how to use form data in php  and extracting infformation from form datta  -->
-
+<form action="" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" name="name" placeholder="name">
+  <br>
+  <label for="name">email:</label>
+  <input type="email" name="email" placeholder="email">
+  <br>
+  <label for="name">password:</label>
+  <input type="password" name="password" placeholder="email">
+  <br>
+  <button type="submit" name="login">Submit</button>
+</form>
 </body>
 </html>
 
