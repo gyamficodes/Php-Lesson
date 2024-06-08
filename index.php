@@ -1117,7 +1117,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   if(empty($_POST["nameing"])){
     $nameErr = "Name is required";
   }else{
-    $nameing = text_input($_POST["nameing"]);
+    $nameing = test_input($_POST["nameing"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$nameing)) {
+      $nameErr = "Only letters and white space allowed";
+    }
   }
 
   if(empty($_POST["email"])){
@@ -1157,6 +1161,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <style>
+    .error{
+      color: red;
+    }
+  </style>
 </head>
 <body>
 <h2>i love <?php  echo"$words";?> </h2>
@@ -1173,6 +1183,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <input type="file" name="fileimage" >
 <input type="submit" value="upload the file">
 </form>
+
 
 
 <!-- form handdling -->
@@ -1194,7 +1205,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 <!-- how to use form data in php  and extracting infformation from form datta  -->
-<form action="" method="POST">
+<!-- <form action="" method="POST">
   <label for="name">Name:</label>
   <input type="text" name="name" placeholder="name">
   <br>
@@ -1204,7 +1215,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <label for="name">password:</label>
   <input type="password" name="password" placeholder="email">
   <br>
-  <button type="submit" name="login">Submit</button>
+  <button type="submit" name="login">Submit</button> -->
 
 
 <!-- how to validate a form -->
@@ -1223,11 +1234,32 @@ code by injecting HTML or Javascript code (Cross-site Scripting attacks) in form
 The htmlspecialchars() function converts special characters to HTML entities. Now if the user tries to exploit the PHP_SELF variable, it will result in the following output:
 -->
 
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-
-
+Name: <input type="text" name="name">
+<span class="error">* <?php echo $nameErr;?></span>
+<br><br>
+E-mail:
+<input type="text" name="email">
+<span class="error">* <?php echo $emailErr;?></span>
+<br><br>
+Website:
+<input type="text" name="website">
+<span class="error"><?php echo $websiteErr;?></span>
+<br><br>
+Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+<br><br>
+Gender:
+<input type="radio" name="gender" value="female">Female
+<input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="other">Other
+<span class="error">* <?php echo $genderErr;?></span>
+<br><br>
+<input type="submit" name="submit" value="Submit">
 
 </form>
+
+
 </body>
 </html>
 
