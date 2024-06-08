@@ -1093,7 +1093,61 @@ if(isset($_POST["register"])){
 }
 
 
-// how to use form data in php  and extracting infformation from form datta
+// php validation
+
+function text_input($data){
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+$nameing = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $genderErr = $websiteErr = "";
+if($_SERVER["REQUEST_METHOD"] = "POST"){
+  $nameing = text_input($_POST["nameing"]);
+  $email = text_input($_POST["email"]);
+  $gender = text_input($_POST["gender"]);
+  $comment = text_input($_POST["comment"]);
+  $website = text_input($_POST["website"]);
+}
+
+// validation
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  if(empty($_POST["nameing"])){
+    $nameErr = "Name is required";
+  }else{
+    $nameing = text_input($_POST["nameing"]);
+  }
+
+  if(empty($_POST["email"])){
+    $emailErr = "Email is required";
+  }else{
+    $email = text_input($_POST["email"]);
+  }
+
+  if(empty($_POST["gender"])){
+    $genderErr = "Gender is required";
+  }else{
+    $gender = text_input($_POST["gender"]);
+  }
+
+  if(empty($_POST["website"])){
+     $websiteErr = "";
+  }else{
+    $website = text_input($_POST["website"]);
+  }
+  if(empty($_POST["comment"])){
+    $comment = "";
+  }else{
+    $comment = text_input($_POST["comment"]);
+  }
+
+}
+
+
+
+
 
 ?>
 
@@ -1168,6 +1222,8 @@ like < and > with &lt; and &gt;. This prevents attackers from exploiting the
 code by injecting HTML or Javascript code (Cross-site Scripting attacks) in forms.
 The htmlspecialchars() function converts special characters to HTML entities. Now if the user tries to exploit the PHP_SELF variable, it will result in the following output:
 -->
+
+
 
 
 
