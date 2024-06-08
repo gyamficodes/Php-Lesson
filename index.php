@@ -1151,6 +1151,16 @@ if(isset($_POST["register"])){
   <input type="password" name="password" placeholder="email">
   <br>
   <button type="submit" name="login">Submit</button>
+
+
+<!-- how to validate a form -->
+<!-- how to use form data in php  -->
+ <!-- validating my name -->
+
+
+
+ 
+
 </form>
 </body>
 </html>
