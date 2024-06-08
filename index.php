@@ -1157,9 +1157,19 @@ if(isset($_POST["register"])){
 <!-- how to use form data in php  -->
  <!-- validating my name -->
 
+ <!-- What is the $_SERVER["PHP_SELF"] variable?
+The $_SERVER["PHP_SELF"] is a super global variable that returns the filename of the currently executing script. -->
+
+<!-- 
+What is the htmlspecialchars() function?
+
+The htmlspecialchars() function converts special characters into HTML entities. This means that it will replace HTML characters 
+like < and > with &lt; and &gt;. This prevents attackers from exploiting the 
+code by injecting HTML or Javascript code (Cross-site Scripting attacks) in forms.
+The htmlspecialchars() function converts special characters to HTML entities. Now if the user tries to exploit the PHP_SELF variable, it will result in the following output:
+-->
 
 
- 
 
 </form>
 </body>
