@@ -1112,6 +1112,7 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
   $website = text_input($_POST["website"]);
 }
 
+
 // validation
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   if(empty($_POST["nameing"])){
