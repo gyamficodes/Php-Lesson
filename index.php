@@ -1093,64 +1093,9 @@ if(isset($_POST["register"])){
 }
 
 
-// php validation
 
-function text_input($data){
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-$nameing = $email = $gender = $comment = $website = "";
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-if($_SERVER["REQUEST_METHOD"] = "POST"){
-  $nameing = text_input($_POST["nameing"]);
-  $email = text_input($_POST["email"]);
-  $gender = text_input($_POST["gender"]);
-  $comment = text_input($_POST["comment"]);
-  $website = text_input($_POST["website"]);
-}
-
-
-// validation
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  if(empty($_POST["nameing"])){
-    $nameErr = "Name is required";
-  }else{
-    $nameing = test_input($_POST["nameing"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$nameing)) {
-      $nameErr = "Only letters and white space allowed";
-    }
-  }
-
-  if(empty($_POST["email"])){
-    $emailErr = "Email is required";
-  }else{
-    $email = text_input($_POST["email"]);
-  }
-
-  if(empty($_POST["gender"])){
-    $genderErr = "Gender is required";
-  }else{
-    $gender = text_input($_POST["gender"]);
-  }
-
-  if(empty($_POST["website"])){
-     $websiteErr = "";
-  }else{
-    $website = text_input($_POST["website"]);
-  }
-  if(empty($_POST["comment"])){
-    $comment = "";
-  }else{
-    $comment = text_input($_POST["comment"]);
-  }
-
-}
-
-
+//How to uese form data in php.
+//External page submission.
 
 
 
@@ -1235,7 +1180,7 @@ code by injecting HTML or Javascript code (Cross-site Scripting attacks) in form
 The htmlspecialchars() function converts special characters to HTML entities. Now if the user tries to exploit the PHP_SELF variable, it will result in the following output:
 -->
 
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+<form  action="loginvalidation.php" method="POST">
 
 Name: <input type="text" name="name">
 <span class="error">* <?php echo $nameErr;?></span>
@@ -1256,7 +1201,7 @@ Gender:
 <input type="radio" name="gender" value="other">Other
 <span class="error">* <?php echo $genderErr;?></span>
 <br><br>
-<input type="submit" name="submit" value="Submit">
+<input type="submit" name="submit" value="Submit" >
 
 </form>
 
