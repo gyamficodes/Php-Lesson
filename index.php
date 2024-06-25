@@ -388,14 +388,29 @@ class student {
      return  $this->name ;
     }
 
-     
-
 }
 
 $John = new student();
 $John->set_name("John");
 echo  $John->get_name();
 
+
+class drive {
+  public $brand;
+  public $model;
+
+  public function __construct($brand, $model) {
+    $this->brand = $brand;
+    $this->model = $model;
+  }
+
+  public function start() {
+    echo "The $this->brand $this->model has started.";
+  }
+}
+
+$myCar = new drive("Toyota", "Camry");
+$myCar->start();
 
 
 class Book {
